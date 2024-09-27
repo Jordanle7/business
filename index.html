@@ -1,1 +1,121 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>History of Computers: Steve Wozniak</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <style>
+        body, html {
+          height: 100%;
+          background-color: #111;
+        }
 
+        .parallax1, .parallax2 {
+          background-attachment: fixed;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        .parallax1 {
+          background-image: url("pixelcut-export.png");
+          height: 100%;
+        }
+
+        .parallax2 {
+          background-image: url("background.jpeg");
+          height: 100%
+        }
+
+        .title {
+          position: absolute;
+          left: 0;
+          top: 30%;
+          width: 100%;
+          text-align: center;
+          color: #000;
+        }
+
+        .title span.border {
+          background-color: #111;
+          color: #fff;
+          padding: 24px;
+          font-size: 30px;
+          letter-spacing: 10px;
+        }
+
+        .text {
+          height:500px; 
+          background-color: #111; 
+          font-size: 18px; 
+          color: white;
+          padding-top: 150px;
+          padding-left: 50px;
+          letter-spacing: 3px;
+          line-height: 50px;
+        }
+        .timer {
+          text-align: center;
+          font-size: 60px;
+          background-color: #111;
+          color: white;
+          height: 500px;
+          
+        }
+      </style>
+    </head>
+    <body>
+      <ul>
+        <li><a href=index.html>Home</a></li>
+        <li><a href=SigtoComSci.html>Significance to Com. Sci.</a></li>
+        <li><a href=Photo.html>Photos</a></li>
+        <li><a href=OtherInfo.html>Pertinent Info.</a></li>
+      </ul>
+      
+      <div class="parallax1">
+        <div class="title">
+          <span class="border">
+            Steve Wozniak
+          </span>
+        </div>
+      </div>
+      
+      <div class="text">
+        Name : Steve Wozniak
+        <br>
+        Born : August 11, 1950, San Jose, California.
+        <br>
+        Co-founder of Apple with Steve Jobs
+        <br>
+        Known for : Co-Founding Apple, Creating the Apple I, Apple II, influencing current Apple, etc.
+      </div>
+      
+      <div class="parallax2"></div>
+      <div class="timer">
+        <p id="timer"></p>
+        <p>Until Birthday</p>
+      </div>
+      <script>
+
+        var countDownDate = new Date("August 11, 2025 00: 00: 00").getTime();
+        
+        var x = setInterval(function() {
+        
+        var now = new Date().getTime();
+            
+        var distance = countDownDate - now;
+        
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+          document.getElementById("timer").innerHTML = days + "D " + hours + "H "
+          + minutes + "M " + seconds + "S ";
+        
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("timer").innerHTML = "OVER";
+          }
+        }, 1000);
+    </script>
+    </body>
+  </html>
